@@ -17,9 +17,9 @@ public class App
     public static void main( String[] args )
     {
         
-        Configuration cfg = new Configuration();
-        cfg.configure("hibernate.confi.xml");
-        SessionFactory factory = cfg.buildSessionFactory();
+        Configuration con = new Configuration();
+        con.configure("hibernate.cfg.xml").addAnnotatedClass(Teacher.class).addAnnotatedClass(course.class);
+        SessionFactory factory = con.buildSessionFactory();
         Teacher t1 = new Teacher();
         t1.setT_id(12);
         t1.setT_name("Marudula");
